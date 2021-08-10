@@ -1,0 +1,125 @@
+
+:root{
+  --text-color: #f0f4f5;
+  
+}
+/* 위와 같이 하면 컬러를 변수 같이 설정해서 생산성을 늘릴 수 있다. */
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+a{
+
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.navbar {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #263343;
+  padding: 8px 12px;
+}
+
+
+.navbar__logo {
+  font-size: 24px ;
+  color: white;
+}
+
+
+
+.navbar__logo i {
+  color: blue;
+}
+
+
+.navbar__menu {
+
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+
+/* 패딩값을 주는 이유? 나중에 마우스를 올렸을 때 백그라운드를 좀더 넓게! 마진을 넣으면 클릭 할 수 있는 범위가 좁아진다 */
+.navbar__menu li {
+
+  padding: 8px 12px;
+}
+
+.navbar__menu li:hover {
+    background-color: violet;
+    border-radius: 4px;
+}
+
+.navbar__icons {
+
+  list-style: none;
+  color: white;
+  display: flex;
+  padding-left: 0;
+
+}
+
+.navbar__icons li {
+  padding: 8px 12px;
+}
+
+
+.navbar_toogleBtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size:  24px;
+  color: blueviolet;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+  
+  }
+
+  /* 너비가 넓어지면 텍스트는 자동으로 왼쪽 */
+  .navbar__menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .navbar__icons {
+    display: none;
+    /* 중간으로 안올떄? 너비가 100퍼센트라 그런것! */
+    justify-content: center; 
+    width: 100%;
+
+  }
+
+  .navbar_toogleBtn {
+    display: block;
+  }
+
+
+  .navbar__menu.active,
+  .navbar__icons.active {
+    display: flex;
+  }
+}
