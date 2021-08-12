@@ -40,7 +40,7 @@ for tc in range(1, T+1):
     sum_revesr_dia = 0
 
     for i in range(len(lst)):
-        sum_revesr_dia += lst[i][4-i]
+        sum_revesr_dia += lst[i][99-i]
 
     res.append(sum_revesr_dia)
 
