@@ -1,8 +1,4 @@
 
-
-
-
-
 """
 ladder1: ladder1
 """
