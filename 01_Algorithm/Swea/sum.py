@@ -23,14 +23,12 @@ for tc in range(1, T+1):
         res.append(sum_row)
 
     # 열 합
-
     for j in range(len(lst[0])):
         sum_col = 0
         for i in range(len(lst)):
             sum_col += lst[i][j]
         res.append(sum_col)
     # 대각선 합
-
     sum_dia = 0
     for i in range(len(lst)):
         sum_dia += lst[i][i]
