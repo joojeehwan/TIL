@@ -15,6 +15,14 @@
 bfs돌고! bfs탐색이 끝날 떄마다(같은 색깔의 칸들을 탐색이 끝날떄마다) cnt를 하나 씩 증가!
 
 
+
+
+
+1. 비트마스크?
+
+
+
+
 '''
 
 
@@ -44,11 +52,12 @@ def bfs(start_row, start_col):
             if visited[next_row][next_col] != 0:
                 continue
 
-            if MAP[next_row][next_col] == MAP[start_row][start_col]:
+            if MAP[next_row][next_col] == MAP[start_row][start_col]:  #처음에 들어오는 값들을 검색해야 하니깐! 같은색,,,!
                 q.append([next_row, next_col])
                 visited[next_row][next_col] = 1
+            
 
-                #처음에 들어오는 값들을 검색해야 하니깐! 같은색,,,!
+               
 
 N = int(input())
 q = deque()
