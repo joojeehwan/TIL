@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+ 
+  <div id="root"></div>
+ 
+
+</body>
+
+
+
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+
+    function MinutesToHours () {
+        
+      const [amount, setAmount] = React.useState(0)
+      const [flipped, setFlipped] = React.useState(false)
+      const onChange = (event) => {
+        setAmount(event.target.value)
+      }
+
+      const reset = () => setAmount(0)
+      const onFlip = () => {
+        
+        reset()
+        setFlipped((current) => !current)
+      } 
+
+
+      return (
+        <div>
+          <label htmlfor="minutes">분</label>
+          <input 
+            value={flipped ? amount * 60 : amount}
+            id="minutes" 
+            placeholder="Minutes" 
+            type="number" 
+            onChange={onChange}
+            disabled = {flipped === true}
+
+          />
+          <h4>You want to convert {amount}</h4>
+
+          <div>
+            <label htmlfor="hours">시간</label>
+            <input 
+            value={ flipped ? amount : Math.round(amount / 60)}
+            id="hours" 
+            placeholder="Hours" 
+            type="number" 
+            onChange={onChange}
+            disabled = {flipped === false}
+            />
+          </div>
+          <button onClick={reset}>Reset</button>
+          <button onClick={onFlip}>
+            {flipped ? "Turn back" : "Inverted"}
+            </button>
+          
+        </div>
+      )
+
+
+    }
+    function KmToMiles () {
+      return <h3>KmToMiles</h3>
+    }
+    function App() {
+     
+      const [index, setIndex] = React.useState("0")
+      const onSelect = (event) => {
+        setIndex(event.target.value)
+      }
+      return (
+
+        <div>
+          <h1>Super Converter</h1>
+          <select value={index} onChange = {onSelect}>
+              <option value = "0">Minutes & houres</option>
+              <option value = "1">km & miles</option>
+          </select>
+
+          {index === "0" ? <MinutesToHours /> : null}
+          {index === "1" ? <KmToMiles /> : null}
+        </div>
+      )
+    }
+
+
+    const root = document.getElementById("root")
+    ReactDOM.render(<App/>, root)
+
+    // const root = document.getElementById("root")
+    // function App() {
+    //   const [counter, setCounter] = React.useState(0)
+    //   const onClick = () => {
+    //     //setCounter(counter + 1)
+    //     // 현재의 값을 기준으로! counter라는 값은 다른곳에서 변할 수도 있으니! 
+    //     setCounter((current) => current + 1)
+    //   }
+    
+    //   return (
+    //     <div>
+    //       <h3>Total clicks: {counter}</h3>
+    //       <button onClick={onClick}>Clike me</button>
+    //     </div>
+    //   )
+    // }
+
+    // ReactDOM.render(<App/>, root)
+
+      // const Title =  () => (
+      //   <h3 id="title" onMouseEnter={() => console.log("mouser enter")}>
+      //       Hello 나는 타이틀  
+      //     </h3>
+      // )
+
+
+      // // const h3 = React.createElement("h3", {
+      // //   onMouseEnter: () => console.log("mouser enter")
+      // // }, "Hello i m a span")
+
+
+      // const Button = () => (
+      //   <button
+      //   style={{
+      //     backgroundColor: "tomato",
+      //   }}
+      //   onClick={() => console.log("나는 클랙당했다")}
+      //   >
+      //   Click me
+      //   </button>
+      // )
+
+
+      // // const btn = React.createElement("button", {
+      // //   onClick: () => console.log("클릭했음"),
+      // //   style: {
+      // //     backgroundColor: "tomato",
+      // //   }
+      // // }, "click me")
+
+      // // const container = React.createElement("div", null, [Title, Button])
+      // const Container = () =>
+      // <div>
+      //   <Title/> 
+      //   <Button/>
+      // </div>
+      
+      // ReactDOM.render(<Container/>, root)
+      // react 엘리먼트들을 root div안에서 보여주라는 뜻 
+
+
+  </script>
+
+
+
+</html>
