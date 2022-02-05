@@ -92,6 +92,11 @@ class Clock extends React.Component {
 
 
 
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((numbers) =>
+  <li>{numbers}</li>
+);
+
 
 
 ReactDOM.render(
@@ -104,8 +109,15 @@ ReactDOM.render(
     <div>------------------------------ </div>
 
 
+
     <Clock/>,
 
+
+    <div>------------------------------ </div>
+
+
+    <ul>{listItems}</ul>,
+ 
   </React.StrictMode>,
   document.getElementById('root')
 );

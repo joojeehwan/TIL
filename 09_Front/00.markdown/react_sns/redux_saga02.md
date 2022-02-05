@@ -369,9 +369,17 @@ export default (initalValue = null) => {
 
 ----
 
+# add post of me / remove post of me 왜 있지?! 
 
 
-# Tip 게시글 삭제 / 추가 를 통해 팔로우 팔로워 정보 변경
+
+# Tip 게시글 삭제 / 추가 를 통해 마이 프로필의 게시글 정보 추가
+
+
+
+## 다른 리듀서에 변화를 주는 방법! 
+
+post 리듀서랑 user리듀서가 다른데 어떻게 게시글 추가하면 내 유저 정보에 내가 쓴 게시글의 id를 추가 할 수 있을까?! 
 
 
 
@@ -1037,4 +1045,4 @@ Posts: state.me.Posts.filter((V) => v.id !== action.data)
 
 ----
 
-# 와 삭제는 되는데 다른게 지원진다?! 이거 보통 내가 겪었떤,,! vue에서도!
+# 와 삭제는 되는데 다른게 지원진다?! 이거 보통 내가 겪었떤,,! vue에서도!`
