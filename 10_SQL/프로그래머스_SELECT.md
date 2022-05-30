@@ -58,7 +58,7 @@ ANIMAL_INS 테이블에 동물들의 정보가 담겨 있습니다. 각 테이�
 - 정렬은 내림차순
 
 ```mysql
-1 SELECT NAME, DATETIME FROM ANIMAL_INS order by ANIMAL_ID desc; 
+ SELECT NAME, DATETIME FROM ANIMAL_INS ORDER BY ANIMAL_ID desc; 
 ```
 
 
@@ -95,7 +95,7 @@ ANIMAL_INS 테이블에 동물들의 정보가 담겨 있습니다. 각 테이�
 조회할 열은 ANIMAL_ID 와 NAME이고, 그 데이터 중 INTAKE_CONDITION이 Sick 인 row만 출력해야 합니다. 그리고 **order by** 를 사용하여, 정렬 기준이 될 컬럼을 지정합니다.
 
 ```mysql
- SELECT ANIMAL_ID , NAME FROM ANIMAL_INS where INTAKE_CONDITION = 'Sick' order by ANIMAL_ID 
+ SELECT ANIMAL_ID , NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION = 'Sick' ORDER BY ANIMAL_ID 
 ```
 
 
@@ -205,11 +205,10 @@ ANIMAL_INS 테이블에 동물들의 정보가 담겨 있습니다. 각 테이�
 - LIMIT 2, 6 : 위에서 2번째부터 6번째까지의 정보 조회
 
 ```mysql
-1 2 3 4 SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME LIMIT 1 
+SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME LIMIT 1 
 ```
 
 
 
 ----
-
 
