@@ -18,8 +18,6 @@ Hint
 소프트 파싱 vs 하드 파싱
 조인할때, "1대다"가 되는 경우를 조심하자.
 
-
-
 <tip>
 
 Icis => rule base / kos => cost base
