@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lecture</title>
+  
+</head>
+<body>
+  <div id="root"></div>
+  <script src="./dist/app.js">
+
+    // class LikeButton extends React.Component {
+    //     constructor(props) {
+    //       super(props)
+    //       this.state = {
+    //         liked: false,
+    //       }
+    //     }
+
+      const GuGuDan = () => {
+
+          // 꼭 여기 안에 있어야 함
+        const [first, setFirst] = React.useState(Math.ceil(Math.random() * 9))
+        const [second, setSeond] = React.useState(Math.ceil(Math.random() * 9))
+        const [value, setValue] = React.useState("")
+        const [result, setResult] = React.useState("")
+        const inputEl = useRef(null);
+        return (
+          <div>
+              hello
+          </div>
+        )
+
+        const onSubmitForm = (e) => {
+    e.preventDefault();
+    if (parseInt(value) === first * second) {
+      setResult('정답');
+      setFirst(Math.ceil(Math.random() * 9));
+      setSecond(Math.ceil(Math.random() * 9));
+      setValue('');
+      inputEl.current.focus();
+    } else {
+      setResult('땡');
+      setValue('');
+      inputEl.current.focus();
+    }
+    return (
+    <>
+      <div>{first} 곱하기 {second}는?</div>
+      <form onSubmit={onSubmitForm}>
+        <input
+          ref={inputEl}
+          type="number"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <button>입력!</button>
+      </form>
+      <div id="result">{result}</div>
+    </>
+  );
+  };
+      }
+      class GuGudan extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {
+            first: Math.ceil(Math.random() * 9),
+            second: Math.ceil(Math.random() * 9), 
+            value:"", 
+            result:""
+          }
+        }
+      
+
+      render() {
+        //vaule의 값을 변화 하니깐 그것마져도 state로! 
+          return (
+            <div>
+                <div>{this.state.first} 곱하기 {this.state.second}는?!</div>
+                <form onSubmit = {(e) => {
+                e.preventDefaults()
+                if (parseInt(value) === this.state.first * this.state.second) {
+                  this.setState({
+                    result: '정답: ' + prevState.value,
+                    first: Math.ceil(Math.random() * 9),
+                    second: Math.ceil(Math.random() * 9),
+                    value: '',
+                  })
+                }else {
+                  this.setState({
+                    result:"꽝", 
+                    vaule: ""
+                  })
+                }
+
+                }}>
+                    <input type="number" value={this.state.value} onChange={(e) =>this.setState({value: e.target.value}) }/>
+                    
+                    <button>입력 </button>
+                    </form>
+                  <div>{this.state.result}</div>
+            </div>
+          );
+
+
+            // return <button type="submit" onClick={() => {this.setState({liked: true})}}>
+            //   {this.state.liked === true ? "Liked" : "Like"}
+            //   </button>
+            //jsx + html
+
+
+          // return e("button", 
+          // {onClick: () => {this.setState({liked: true})},type: "submit"}, 
+          // this.state.liked === true ? "Liked" : "Like",
+          // )
+        }
+    }
+
+
+  </script>
+  <script type="text/babel">
+     ReactDOM.render(<GuGudan/>, document.querySelector("#root"))
+  </script>
+
+
+
+  
+</body>
+</html>
